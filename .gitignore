@@ -1,6 +1,7 @@
 data
 graph
-model
+model/*
+!model/1223-2329
 result
 *.out
 *.zip

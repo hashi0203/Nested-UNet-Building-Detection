@@ -10,12 +10,7 @@ model_dir = 'model/'
 graph_dir = 'graph/'
 pred_dir = 'result/'
 
-# model_date = 'sample'
-# model_date = '1223-2329-72'
-# model_date = '1223-2329-mask'
-# model_date = '1225-1322'
-# model_date = '1225-1336'
-model_date = '1225-1425'
+model_date = '1223-2329'
 
 x_train_dir = os.path.join(data_dir, 'train_img')
 y_train_dir = os.path.join(data_dir, 'train_label')
