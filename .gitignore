@@ -1,0 +1,7 @@
+data
+graph
+model
+result
+*.out
+*.zip
+*.ipynb
