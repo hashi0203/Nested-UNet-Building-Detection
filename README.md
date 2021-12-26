@@ -6,23 +6,60 @@
 |:-------------------------------:|:-----------------------------:|:-----------------------------:|:-----------------------------:|:-----------------------------:|
 | Input Image | Ground Truth | UNet++ Output | Post-prosessed by Fully Connected CRF |  Post-prosessed by Fully Connected CRF and Denoising |
 
-<table>
-    <thead>
-        <tr>
-            <th align="center" style="width:20%"><a target="_blank" rel="noopener noreferrer" href="/hashi0203/Nested-UNet-Building-Detection/blob/main/img/val_img.png"><img src="img/val_img.png" alt="val_img" width="100%"></a></th>
-            <th align="center" style="width:20%"><a target="_blank" rel="noopener noreferrer" href="/hashi0203/Nested-UNet-Building-Detection/blob/main/img/val_label.png"><img src="img/val_label.png" alt="val_label" width="100%"></a></th>
-            <th align="center" style="width:20%"><a target="_blank" rel="noopener noreferrer" href="/hashi0203/Nested-UNet-Building-Detection/blob/main/img/output.png"><img src="img/output.png" alt="output" width="100%"></a></th>
-            <th align="center" style="width:20%"><a target="_blank" rel="noopener noreferrer" href="/hashi0203/Nested-UNet-Building-Detection/blob/main/img/CRF.png"><img src="img/CRF.png" alt="CRF" width="100%"></a></th>
-            <th align="center"><a target="_blank" rel="noopener noreferrer" href="/hashi0203/Nested-UNet-Building-Detection/blob/main/img/denoised.png"><img src="img/denoised.png" alt="denoised" width="100%"></a></th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td align="center">Input Image</td>
-            <td align="center">Ground Truth</td>
-            <td align="center">UNet++ Output</td>
-            <td align="center">Post-prosessed by Fully Connected CRF</td>
-            <td align="center">Post-prosessed by Fully Connected CRF and Denoising</td>
-        </tr>
-    </tbody>
-</table>
+## Usage
+
+1. Install
+
+    ```bash
+    $ git clone https://github.com/hashi0203/Nested-UNet-Building-Detection.git
+    $ cd Nested-UNet-Building-Detection
+    $ pip install -r requirements.txt
+    ```
+
+2. Prepare data
+
+    <pre>
+    data
+    ├── test_img
+    │   ├── xxx.png
+    │    &#65049;
+    │   └── xxx.png
+    ├── train_img
+    │   ├── xxx.png
+    │    &#65049;
+    │   └── xxx.png
+    ├── train_label
+    │   ├── xxx.png
+    │    &#65049;
+    │   └── xxx.png
+    ├── val_img
+    │   ├── xxx.png
+    │    &#65049;
+    │   └── xxx.png
+    └── val_label
+        ├── xxx.png
+         &#65049;
+        └── xxx.png
+    </pre>
+
+3. Edit `config.py`
+
+4. Train
+
+    ```bash
+    $ mkdir graph
+    $ python train.py
+    ```
+
+5. Edit `config.py`
+
+    Set the model to use for evaluation
+
+6. Evaluate
+
+    ```bash
+    $ mkdir result
+    $ python evaluate.py    # without post processing
+    $ python evaluate.py -c # with post processing (Fully Connected CRF)
+    $ python evaluate.py -d # with post processing (Fully Connected CRF and denoising)
+    ```

@@ -14,8 +14,8 @@ import crf
 
 parser = argparse.ArgumentParser()
 parser.add_argument('-y', '--yes', default=False, action='store_true', help='overwrite result or not')
-parser.add_argument('-p', '--postprocess', default=False, action='store_true', help='postprocess result or not')
-parser.add_argument('-f', '--filtering', default=False, action='store_true', help='filtering result or not')
+parser.add_argument('-c', '--crf', default=False, action='store_true', help='post-process (fully connected CRF) or not')
+parser.add_argument('-d', '--denoising', default=False, action='store_true', help='post-process (fully connected crf and denoising) or not')
 args = parser.parse_args()
 
 data_dir = config.data_dir
