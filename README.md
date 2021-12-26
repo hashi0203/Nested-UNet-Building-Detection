@@ -57,6 +57,8 @@
 
 6. Evaluate
 
+    Warning: Denoising may take a long time
+
     ```bash
     $ mkdir result
     $ python evaluate.py    # without post processing
